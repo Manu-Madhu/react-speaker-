@@ -14,7 +14,6 @@ const LandingPage = () => {
     // dot animation 
     const [dots, setDots] = useState("");
 
-
     useEffect(() => {
         // Initialize the SpeechRecognition API (Web Speech API)
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -93,7 +92,6 @@ const LandingPage = () => {
         }
     };
 
-
     // animation
     useEffect(() => {
         const interval = setInterval(() => {
@@ -148,6 +146,8 @@ const LandingPage = () => {
                             <button onClick={resetListening} className={`bg-purple-800  w-full text-white p-5 px-10 rounded-bl-lg`}>
                                 {chatResponse ? "Ask another question" : " Restart Conversation"}
                             </button>
+
+                            {/* Conditionally update button the submit and the stop  */}
                             {chatResponse ? (
                                 <button onClick={stopListening} className="bg-red-600 w-full text-white p-5 px-10 rounded-br-lg">
                                     End Conversation
