@@ -111,7 +111,7 @@ const LandingPage = () => {
 
                 {/* Image */}
                 <div className={` ${isListening || isLoading ? "hidden" : "block"} flex items-center justify-center absolute bottom-0`}>
-                    <img src={image} alt="cover" className="w-fit h-[600px] lg:h-full object-contain" />
+                    <img src={image} alt="cover" className="w-fit h-[600px] lg:h-[5 00px] object-contain" />
                 </div>
 
                 {/* Buttons for Starting/Stopping Listening */}
