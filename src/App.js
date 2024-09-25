@@ -10,13 +10,3 @@ function App() {
 }
 
 export default App;
-
-
-// const stopListening = () => {
-//   setListeningImage('/assets/listening.gif')
-//   setImage('/assets/cover.png')
-//   if (recognition) {
-//       recognition.stop();
-//       setListening(false);
-//   }
-// };
