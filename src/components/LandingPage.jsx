@@ -101,7 +101,7 @@ const LandingPage = () => {
     }, []);
 
     return (
-        <main className="bg-[#F5EFFF] flex items-center justify-center w-full min-h-screen p-10 relative">
+        <main className="bg-[#F5EFFF] flex items-center justify-center w-full min-h-screen p-5 lg:p-10 relative">
             {/* Main Section */}
             <section className="bg-white rounded-2xl shadow-lg flex flex-col items-center  relative w-full h-[90vh] p-5 lg:p-10">
                 {/* Heading part */}
@@ -110,12 +110,12 @@ const LandingPage = () => {
                 </div>
 
                 {/* Image */}
-                <div className={` ${isListening || isLoading ? "hidden" : "block"} flex items-center justify-center`}>
-                    <img src={image} alt="cover" className="w-fit h-full object-contain" />
+                <div className={` ${isListening || isLoading ? "hidden" : "block"} flex items-center justify-center absolute bottom-0`}>
+                    <img src={image} alt="cover" className="w-fit h-[600px] lg:h-full object-contain" />
                 </div>
 
                 {/* Buttons for Starting/Stopping Listening */}
-                <div className="w-full lg:w-1/2 text-center">
+                <div className="w-full lg:w-1/2 text-center absolute bottom-0">
                     {!isListening && (
                         <button onClick={startListening} className="bg-purple-800 text-white w-full p-3 px-10 rounded-lg lg:rounded-full">
                             Start Conversation
@@ -128,13 +128,13 @@ const LandingPage = () => {
             {isListening && (
                 <section className="fixed h-screen w-screen top-0 left-0 bg-black/60 backdrop-blur-sm z-20">
                     {/* Side image */}
-                    <div className={` ${isListening ? "block" : "hidden"} w-full h-2/3 flex items-center justify-center`}>
+                    <div className={` ${isListening ? "block" : "hidden"} w-full h-2/4 flex items-center justify-center`}>
                         <img src={ListeningImage} alt="Listening" className="w-fit h-full object-cover" />
                     </div>
 
-                    <div className="w-full flex flex-col items-center justify-center px-10">
+                    <div className="w-full flex flex-col items-center justify-center px-7">
                         {/* Display the captured text */}
-                        <div className="bg-gray-200 p-5 rounded-t-md w-full lg:w-1/2 min-h-[220px]">
+                        <div className="bg-gray-200 p-5 rounded-t-md w-full lg:w-1/2 min-h-[200px]">
                             <p className="text-xl font-bold text-purple-800 uppercase mb-1">{chatResponse ? " Responding" : "Listening"} {dots}</p>
                             {transcript && (
                                 <p className="text-lg capitalize">{transcript}</p>
