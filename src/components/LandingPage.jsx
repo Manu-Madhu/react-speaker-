@@ -12,8 +12,8 @@ const LandingPage = () => {
     const [isLoading, setLoading] = useState(false);
 
     // dot animation 
-    const [statusText, setStatusText] = useState("Listening");
     const [dots, setDots] = useState("");
+
 
     useEffect(() => {
         // Initialize the SpeechRecognition API (Web Speech API)
@@ -63,6 +63,7 @@ const LandingPage = () => {
             recognition.stop();
         }
         setTranscript('');
+        setChatResponse(false)
         setTimeout(() => { recognition.start(); }, 1000)
         setListeningImage('/assets/listening.gif');
     };
@@ -144,23 +145,18 @@ const LandingPage = () => {
 
                         {/* Buttons Controller */}
                         <div className="flex w-full lg:w-1/2">
-                            {
-                                chatResponse ? (
-                                    <button onClick={stopListening} className="bg-red-600 w-full text-white p-3 px-10 rounded-">
-                                        End of Conversation
-                                    </button>
-                                ) : (
-                                    <>
-                                        <button onClick={resetListening} className="bg-green-600 w-full text-white p-5 px-10 rounded-">
-                                            Restart Conversation
-                                        </button>
-                                        <button onClick={submitTranscript} className="bg-red-600 w-full text-white p-5 px-10 rounded-">
-                                            End Conversation
-                                        </button>
-                                    </>
-                                )
-                            }
-
+                            <button onClick={resetListening} className={`bg-purple-800  w-full text-white p-5 px-10 rounded-bl-lg`}>
+                                {chatResponse ? "Ask another question" : " Restart Conversation"}
+                            </button>
+                            {chatResponse ? (
+                                <button onClick={stopListening} className="bg-red-600 w-full text-white p-5 px-10 rounded-br-lg">
+                                    End Conversation
+                                </button>
+                            ) : (
+                                <button onClick={submitTranscript} className="bg-green-600 w-full text-white p-5 px-10 rounded-br-lg">
+                                    Submit
+                                </button>
+                            )}
                         </div>
                     </div>
                 </section >
