@@ -106,7 +106,9 @@ const LandingPage = () => {
             <section className="bg-white rounded-2xl shadow-lg flex flex-col items-center  relative w-full h-[90vh] p-5 lg:p-10">
                 {/* Heading part */}
                 <div className="flex flex-col w-full text-center capitalize mt-5">
-                    <h1 className="font-bold text-4xl lg:text-[50px] lg:leading-[50px]">Meet <a href="https://docs.google.com/forms/d/1IxskRJAmXe9rtQDYAvJ3117wFd8VEcdeHGqvGJ5Ecm4/edit" target="blank" className="text-purple-800 hover:underline ease-in-out duration-300">Qmark's</a>  new virtual <br /> "<span className="text-purple-800">AI</span> Receptionist" <span className="text-purple-800">Quza</span></h1>
+                    <h1 className="font-bold text-4xl lg:text-[50px] lg:leading-[50px]">Meet
+                        <a href="https://qmarktechnolabs.com/"
+                            target="blank" className="text-purple-800 hover:underline ease-in-out duration-300"> Qmark's</a>  new virtual <br /> "<span className="text-purple-800">AI</span> Receptionist" <span className="text-purple-800">Quza</span></h1>
                 </div>
 
                 {/* Image */}
@@ -118,20 +120,31 @@ const LandingPage = () => {
                 <div className="w-full lg:w-1/2 text-center absolute bottom-0">
                     {!isListening && (
                         <button onClick={startListening} className="bg-purple-800 text-white w-full p-3 px-10 rounded-lg lg:rounded-full">
-                            Start Conversation
+                            Talk with Quza
                         </button>
                     )}
                 </div>
+                <a href="https://docs.google.com/forms/d/1IxskRJAmXe9rtQDYAvJ3117wFd8VEcdeHGqvGJ5Ecm4/edit" target="blank"
+                    className="w-fit text-center absolute bottom-10 lg:bottom-8 right-5">
+                    <button className="bg-purple-800 text-white w-full p-3 px-10 rounded-lg lg:rounded-full">
+                        Enquire now
+                    </button>
+                </a>
+                <a href="https://qmarktechnolabs.com/" target="blank" className="w-fit text-center absolute bottom-10 lg:bottom-8 left-5">
+                    <button className="bg-purple-800 text-white w-full p-3 px-10 rounded-lg lg:rounded-full">
+                        Visit Us
+                    </button>
+                </a>
             </section>
 
             {/* After ask button click */}
             {isListening && (
                 <section className="fixed h-screen w-screen top-0 left-0 bg-black/60 backdrop-blur-sm z-20"
-                    // style={{
-                    //     backgroundImage: `url('/assets/bg.jpg')`,
-                    //     backgroundSize: 'cover',
-                    //     backgroundPosition: 'center'
-                    // }}
+                // style={{
+                //     backgroundImage: `url('/assets/bg.jpg')`,
+                //     backgroundSize: 'cover',
+                //     backgroundPosition: 'center'
+                // }}
                 >
                     {/* Side image */}
                     <div className={` ${isListening ? "block" : "hidden"} w-full h-2/4 flex items-center justify-center`}>
