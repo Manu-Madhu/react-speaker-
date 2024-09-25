@@ -105,8 +105,8 @@ const LandingPage = () => {
             {/* Main Section */}
             <section className="bg-white rounded-2xl shadow-lg flex flex-col items-center  relative w-full h-[90vh] p-5 lg:p-10">
                 {/* Heading part */}
-                <div className="flex flex-col w-full text-center uppercase mt-5">
-                    <h1 className="font-bold text-4xl lg:text-[50px] lg:leading-[50px]">Meet our new virtual <br /> "<span className="text-purple-800">AI</span> Receptionist" <span className="text-purple-800">Quza</span></h1>
+                <div className="flex flex-col w-full text-center capitalize mt-5">
+                    <h1 className="font-bold text-4xl lg:text-[50px] lg:leading-[50px]">Meet <a href="https://docs.google.com/forms/d/1IxskRJAmXe9rtQDYAvJ3117wFd8VEcdeHGqvGJ5Ecm4/edit" target="blank" className="text-purple-800 hover:underline ease-in-out duration-300">Qmark's</a>  new virtual <br /> "<span className="text-purple-800">AI</span> Receptionist" <span className="text-purple-800">Quza</span></h1>
                 </div>
 
                 {/* Image */}
@@ -126,7 +126,13 @@ const LandingPage = () => {
 
             {/* After ask button click */}
             {isListening && (
-                <section className="fixed h-screen w-screen top-0 left-0 bg-black/60 backdrop-blur-sm z-20">
+                <section className="fixed h-screen w-screen top-0 left-0 bg-black/60 backdrop-blur-sm z-20"
+                    // style={{
+                    //     backgroundImage: `url('/assets/bg.jpg')`,
+                    //     backgroundSize: 'cover',
+                    //     backgroundPosition: 'center'
+                    // }}
+                >
                     {/* Side image */}
                     <div className={` ${isListening ? "block" : "hidden"} w-full h-2/4 flex items-center justify-center`}>
                         <img src={ListeningImage} alt="Listening" className="w-fit h-full object-cover" />
