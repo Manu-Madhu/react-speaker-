@@ -74,15 +74,15 @@ const LandingPage = () => {
 
   // Reset listener and clear transcript
   const resetListening = () => {
-    if (recognition) {
-      recognition.stop();
-    }
+    // if (recognition) {
+    //   recognition.stop();
+    // }
 
     setTranscript('');
     setChatResponse(false);
     try {
       recognition.start();
-    } catch {}
+    } catch { }
     setListeningImage(`/assets/listening${getRandomInt(2)}.gif`);
   };
 
@@ -158,9 +158,8 @@ const LandingPage = () => {
 
         {/* Image */}
         <div
-          className={` ${
-            isListening || isLoading ? 'hidden' : 'block'
-          } flex items-center justify-center absolute bottom-0`}
+          className={` ${isListening || isLoading ? 'hidden' : 'block'
+            } flex items-center justify-center absolute bottom-0`}
         >
           <img
             src={image}
@@ -204,17 +203,11 @@ const LandingPage = () => {
       {isListening && (
         <section
           className="fixed top-0 left-0 z-20 w-screen h-screen bg-black/60 backdrop-blur-sm"
-          // style={{
-          //     backgroundImage: `url('/assets/bg.jpg')`,
-          //     backgroundSize: 'cover',
-          //     backgroundPosition: 'center'
-          // }}
         >
           {/* Side image */}
           <div
-            className={` ${
-              isListening ? 'block' : 'hidden'
-            } w-full h-2/4 flex items-center justify-center`}
+            className={` ${isListening ? 'block' : 'hidden'
+              } w-full h-2/4 flex items-center justify-center`}
           >
             <img
               src={ListeningImage}
@@ -225,7 +218,7 @@ const LandingPage = () => {
 
           <div className="flex flex-col items-center justify-center w-full px-7">
             {/* Display the captured text */}
-            <div className="bg-gray-200 p-5 rounded-t-md w-full lg:w-1/2 min-h-[200px]">
+            <div className="bg-gray-200 p-5 rounded-t-md w-full lg:w-1/2 min-h-[200px] max-h-[200px] overflow-y-scroll">
               <p className="mb-1 text-xl font-bold text-purple-800 uppercase">
                 {chatResponse ? ' Responding' : 'Listening'} {dots}
               </p>
