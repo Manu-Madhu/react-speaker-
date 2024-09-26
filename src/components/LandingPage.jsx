@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
+import { baseUrl } from '../utils/Url';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max) + 1;
@@ -50,7 +51,7 @@ const LandingPage = () => {
   }, []);
 
   const startConversation = () => {
-    setSocket(io('http://localhost:8080'));
+    setSocket(io(baseUrl));
     startListening();
   };
 
