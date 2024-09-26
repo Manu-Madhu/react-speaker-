@@ -1,1 +1,1 @@
-export const baseUrl = "http://quzaserver.qmarkdesk.com"
+export const baseUrl = "https://quzaserver.qmarkdesk.com"
