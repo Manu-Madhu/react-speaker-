@@ -52,6 +52,17 @@ const LandingPage = () => {
 
   const startConversation = () => {
     setSocket(io(baseUrl));
+
+    const welcomeAudio = new Audio('/assets/conversation-start.mp3');
+    welcomeAudio.addEventListener('ended', () => {
+      setIsResponding(false);
+      setListeningImage(`/assets/listening${getRandomInt(2)}.gif`);
+    });
+
+    setIsResponding(true);
+    setListeningImage('/assets/conversation-start.gif');
+    welcomeAudio.play();
+
     startListening();
   };
 
