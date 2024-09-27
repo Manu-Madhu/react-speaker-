@@ -82,7 +82,7 @@ const LandingPage = () => {
     setChatResponse(false);
     try {
       recognition.start();
-    } catch { }
+    } catch {}
     setListeningImage(`/assets/listening${getRandomInt(2)}.gif`);
   };
 
@@ -158,8 +158,9 @@ const LandingPage = () => {
 
         {/* Image */}
         <div
-          className={` ${isListening || isLoading ? 'hidden' : 'block'
-            } flex items-center justify-center absolute bottom-0`}
+          className={` ${
+            isListening || isLoading ? 'hidden' : 'block'
+          } flex items-center justify-center absolute bottom-0`}
         >
           <img
             src={image}
@@ -201,13 +202,12 @@ const LandingPage = () => {
 
       {/* After ask button click */}
       {isListening && (
-        <section
-          className="fixed top-0 left-0 z-20 w-screen h-screen bg-black/60 backdrop-blur-sm"
-        >
+        <section className="fixed top-0 left-0 z-20 w-screen h-screen bg-black/60 backdrop-blur-sm">
           {/* Side image */}
           <div
-            className={` ${isListening ? 'block' : 'hidden'
-              } w-full h-2/4 flex items-center justify-center`}
+            className={` ${
+              isListening ? 'block' : 'hidden'
+            } w-full h-2/4 flex items-center justify-center`}
           >
             <img
               src={ListeningImage}
@@ -222,7 +222,7 @@ const LandingPage = () => {
               <p className="mb-1 text-xl font-bold text-purple-800 uppercase">
                 {chatResponse ? ' Responding' : 'Listening'} {dots}
               </p>
-              {transcript && (
+              {(transcript || responseText) && (
                 <p className="text-lg capitalize">
                   {chatResponse ? responseText : transcript}
                 </p>
