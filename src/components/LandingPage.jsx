@@ -74,11 +74,11 @@ const LandingPage = () => {
 
   // Reset listener and clear transcript
   const resetListening = () => {
-    // if (recognition) {
-    //   recognition.stop();
-    // }
-
+    if (recognition) {
+      recognition.stop();
+    }
     setTranscript('');
+
     setChatResponse(false);
     try {
       recognition.start();
